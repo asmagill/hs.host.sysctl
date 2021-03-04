@@ -1,0 +1,74 @@
+Intel Big Sur vs Catalina: Catalina Additions
+
+name                                          type               fmt                  sLen  empty  tError  vError
+
+debug.darkwake                                int                I                    n/a
+debug.SDXC                                    struct             SDXC                 0     empty
+debug.USBMassStorageClass                     ** unknown type 0  USBMassStorageClass  0     empty
+kern.skywalk.flowswitch.en3.ipfm.drain        int                I                    n/a
+kern.skywalk.flowswitch.en3.ipfm.frag_count   unsignedInt        IU                   n/a
+kern.skywalk.flowswitch.en3.ipfm.frag_limit   unsignedInt        IU                   n/a
+kern.skywalk.flowswitch.en3.ipfm.queue_count  unsignedInt        IU                   n/a
+kern.skywalk.flowswitch.en3.ipfm.queue_limit  unsignedInt        IU                   n/a
+net.inet.mptcp.userto                         int                I                    n/a
+net.inet.tcp.ack_prioritize                   int                I                    n/a
+net.inet.tcp.do_tcpdrain                      int                I                    n/a
+net.inet.tcp.doautosndbuf                     int                I                    n/a
+net.inet.tcp.lro                              int                I                    n/a
+net.inet.tcp.lro_startcnt                     int                I                    n/a
+net.inet.tcp.lro_sz                           int                I                    n/a
+net.inet.tcp.lro_time                         int                I                    n/a
+net.inet.tcp.lrodbg                           int                I                    n/a
+net.inet.tcp.rfc1644                          int                I                    n/a
+net.inet.tcp.rfc3390                          int                I                    n/a
+net.inet.tcp.slowstart_flightsize             int                I                    n/a
+net.inet.tcp.tcp_lq_overflow                  int                I                    n/a
+net.link.fake.copypkt_mode                    int                I                    n/a
+security.mac.asp.cache_allocation_count       int                I                    n/a
+security.mac.asp.cache_entry_count            int                I                    n/a
+security.mac.asp.cache_release_count          int                I                    n/a
+security.mac.asp.exec_hook_count              long               L                    n/a
+security.mac.asp.exec_hook_sleep_time         long               L                    n/a
+security.mac.asp.exec_hook_work_time          long               L                    n/a
+security.mac.asp.library_hook_count           long               L                    n/a
+security.mac.asp.library_hook_time            long               L                    n/a
+security.mac.asp.library_sleep_time           long               L                    n/a
+security.mac.asp.pending_evaluation_count     long               L                    n/a
+vfs.afpfs                                     node               -                    6
+
+
+
+debug.darkwake
+debug.SDXC
+debug.USBMassStorageClass
+kern.skywalk.flowswitch.en3.ipfm.drain
+kern.skywalk.flowswitch.en3.ipfm.frag_count
+kern.skywalk.flowswitch.en3.ipfm.frag_limit
+kern.skywalk.flowswitch.en3.ipfm.queue_count
+kern.skywalk.flowswitch.en3.ipfm.queue_limit
+net.inet.mptcp.userto
+net.inet.tcp.ack_prioritize
+net.inet.tcp.do_tcpdrain
+net.inet.tcp.doautosndbuf
+net.inet.tcp.lro
+net.inet.tcp.lro_startcnt
+net.inet.tcp.lro_sz
+net.inet.tcp.lro_time
+net.inet.tcp.lrodbg
+net.inet.tcp.rfc1644
+net.inet.tcp.rfc3390
+net.inet.tcp.slowstart_flightsize
+net.inet.tcp.tcp_lq_overflow
+net.link.fake.copypkt_mode
+security.mac.asp.cache_allocation_count
+security.mac.asp.cache_entry_count
+security.mac.asp.cache_release_count
+security.mac.asp.exec_hook_count
+security.mac.asp.exec_hook_sleep_time
+security.mac.asp.exec_hook_work_time
+security.mac.asp.library_hook_count
+security.mac.asp.library_hook_time
+security.mac.asp.library_sleep_time
+security.mac.asp.pending_evaluation_count
+vfs.afpfs
+

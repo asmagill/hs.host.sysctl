@@ -1,0 +1,110 @@
+s = require("hs.host.sysctl")
+r = s.walk(function(s, n) local t, te = n:type() ; local v, ve = n:value() ; return (not t or ve) and true or false end)
+
+name                                    type               fmt                      sLen    empty  tError         vError
+
+kern.proc.all                           ** unknown type 0  n/a                      219024         unknown value  sysctl-direct only
+kern.proc.pid                           ** unknown type 0  n/a                      n/a            unknown value  oid size mismatch
+kern.proc.pgrp                          ** unknown type 0  n/a                      n/a            unknown value  oid size mismatch
+kern.proc.tty                           ** unknown type 0  n/a                      n/a            unknown value  oid size mismatch
+kern.proc.uid                           ** unknown type 0  n/a                      n/a            unknown value  oid size mismatch
+kern.proc.ruid                          ** unknown type 0  n/a                      n/a            unknown value  oid size mismatch
+kern.proc.lcid                          ** unknown type 0  n/a                      n/a            unknown value  oid size mismatch
+kern.kdebug                             ** unknown type 0  n/a                      n/a            unknown value  value not available
+kern.ipc.mleak_top_trace                struct             S,mb_top_trace           n/a                           device not configured
+kern.ipc.mleak_table                    struct             S,mleak_table            n/a                           device not configured
+kern.symfile                            string             A                        n/a                           input/output error
+kern.procargs                           ** unknown type 0  n/a                      n/a            unknown value  oid size mismatch
+kern.sysv.ipcs.shm                      struct             S,IPCS_shm_command       n/a                           oid size mismatch
+kern.sysv.ipcs.sem                      struct             S,IPCS_sem_command       n/a                           oid size mismatch
+kern.sysv.ipcs.msg                      struct             S,IPCS_msg_command       n/a                           oid size mismatch
+kern.procargs2                          ** unknown type 0  n/a                      n/a            unknown value  oid size mismatch
+kern.monotonic.kdebug_test              int                O                        n/a                           oid size mismatch
+kern.monotonic.fixed_cpu_perf           int                O                        n/a                           invalid address
+kern.monotonic.fixed_thread_perf        int                O                        n/a                           invalid address
+kern.monotonic.fixed_task_perf          int                O                        n/a                           invalid address
+kern.sched_stats                        ** unknown type 0  -                        n/a                           oid size mismatch
+kern.sched_stats_enable                 ** unknown type 0  -                        n/a                           oid size mismatch
+kern.protoboot                          string             A                        n/a                           value not available
+kern.imgsrcdev                          int                I                        n/a                           insufficient privileges
+kern.imgsrcinfo                         struct             I                        n/a                           device not configured
+kern.skywalk.stats.netns                struct             -                        n/a                           insufficient privileges
+kern.skywalk.stats.protons              struct                                      n/a                           insufficient privileges
+kern.skywalk.stats.arena                struct             S,sk_stats_arena         n/a                           insufficient privileges
+kern.skywalk.stats.flow                 struct             S,sk_stats_flow          n/a                           insufficient privileges
+kern.skywalk.stats.flow_owner           struct             S,sk_stats_flow_owner    n/a                           insufficient privileges
+kern.skywalk.stats.flow_route           struct             S,sk_stats_flow_route    n/a                           insufficient privileges
+kern.skywalk.stats.net_if               struct             S,sk_stats_net_if        n/a                           insufficient privileges
+kern.skywalk.stats.flow_switch          struct             S,sk_stats_flow_switch   n/a                           insufficient privileges
+kern.skywalk.stats.userstack            struct             S,sk_stats_userstack     n/a                           insufficient privileges
+kern.skywalk.stats.flow_adv             struct             S,sk_stats_flow_adv      n/a                           insufficient privileges
+kern.skywalk.nexus_provider_list        struct             S,nexus_provider_info_t  n/a                           insufficient privileges
+kern.skywalk.nexus_channel_list         struct             S,nexus_channel_entry_t  n/a                           insufficient privileges
+kern.prng.diag                          struct             -                        n/a                           oid size mismatch
+kern.prng.diaggens                      struct             -                        n/a                           oid size mismatch
+kern.aotmetrics                         struct             S,IOPMAOTMetrics         n/a                           unknown value
+kern.BootCache                          struct             S,BC_command             n/a                           oid size mismatch
+vm.get_owned_vmobjects                  struct             A                        n/a                           oid size mismatch
+vm.enforce_shared_cache_dir             int                I                        n/a                           insufficient privileges
+vfs.generic.noremotehang                int                I                        n/a                           oid size mismatch
+vfs.generic.trace_paths                 ** unknown type 0  -                        n/a                           insufficient privileges
+vfs.nspace.complete                     struct             -                        n/a                           insufficient privileges
+net.inet.tcp.fastopen_key               string             S                        n/a                           oid size mismatch
+net.inet.tcp.progress                   struct             S                        n/a                           permission denied
+net.inet.tcp.info                       struct             S                        n/a                           oid size mismatch
+net.link.generic.system.port_used.list  struct             S,xnpigen                n/a                           insufficient privileges
+net.link.generic.system.ipsec_wake_pkt  struct             S,ipsec wake packet      n/a                           insufficient privileges
+debug.SCSIArchitectureModel             struct             SCSIArchitectureModel    n/a                           oid size mismatch
+debug.SCSIMPIOStatistics                struct             SCSIMPIOStatistics       n/a                           oid size mismatch
+debug.AHCIDisk                          ** unknown type 0  AHCIDisk                 n/a                           unknown system error -536870207
+debug.kDisplayVar                       ** unknown type 0  kDisplayVar              n/a                           insufficient privileges
+debug.KernelPrintf                      ** unknown type 0  KernelPrintf             n/a                           insufficient privileges
+hw.osenvironment                        string             A                        n/a                           oid size mismatch
+hw.ephemeral_storage                    int                I                        n/a                           oid size mismatch
+hw.use_recovery_securityd               int                I                        n/a                           oid size mismatch
+machdep.cpu.tlb.data.small_level1       int                I                        n/a                           unknown value
+machdep.cpu.tlb.data.large_level1       int                I                        n/a                           unknown value
+machdep.cpu.flex_ratio.desired          int                I                        n/a                           unknown value
+machdep.cpu.flex_ratio.min              int                I                        n/a                           unknown value
+machdep.cpu.flex_ratio.max              int                I                        n/a                           unknown value
+machdep.cpu.ucupdate                    struct             S                        n/a                           invalid address
+ktrace.init_background                  int                I                        n/a                           insufficient privileges
+kperf.action.count                      int                I                        n/a                           insufficient privileges
+kperf.action.samplers                   ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.action.userdata                   ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.action.filter_by_task             ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.action.filter_by_pid              ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.action.ucallstack_depth           int                I                        n/a                           insufficient privileges
+kperf.action.kcallstack_depth           int                I                        n/a                           insufficient privileges
+kperf.timer.count                       int                I                        n/a                           insufficient privileges
+kperf.timer.period                      ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.timer.action                      ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.timer.pet_timer                   int                I                        n/a                           insufficient privileges
+kperf.kdebug.action                     int                I                        n/a                           insufficient privileges
+kperf.kdebug.filter                     int                P                        n/a                           insufficient privileges
+kperf.lazy.wait_time_threshold          ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.lazy.wait_action                  ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.lazy.cpu_time_threshold           ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.lazy.cpu_action                   ** unknown type 0  UQ                       n/a                           insufficient privileges
+kperf.sampling                          int                I                        n/a                           insufficient privileges
+kperf.reset                             ** unknown type 0  -                        n/a                           insufficient privileges
+kperf.blessed_pid                       int                I                        n/a                           insufficient privileges
+kperf.blessed_preempt                   int                I                        n/a                           insufficient privileges
+kperf.kdbg_cswitch                      int                I                        n/a                           insufficient privileges
+kperf.pet_idle_rate                     int                I                        n/a                           insufficient privileges
+kperf.lightweight_pet                   int                I                        n/a                           insufficient privileges
+kpc.counting                            int                I                        n/a                           insufficient privileges
+kpc.thread_counting                     int                I                        n/a                           insufficient privileges
+kpc.pmu_version                         int                I                        n/a                           insufficient privileges
+kpc.sw_inc                              struct             S                        n/a                           insufficient privileges
+kpc.thread_counters                     ** unknown type 0  QU                       n/a                           insufficient privileges
+kpc.counters                            ** unknown type 0  QU                       n/a                           insufficient privileges
+kpc.shadow_counters                     ** unknown type 0  QU                       n/a                           insufficient privileges
+kpc.config                              ** unknown type 0  QU                       n/a                           insufficient privileges
+kpc.period                              ** unknown type 0  QU                       n/a                           insufficient privileges
+kpc.actionid                            ** unknown type 0  QU                       n/a                           insufficient privileges
+kpc.force_all_ctrs                      int                I                        n/a                           insufficient privileges
+security.mac.asp.willshutdown           int                I                        n/a                           insufficient privileges
+
+
+

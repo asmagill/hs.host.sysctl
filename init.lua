@@ -147,7 +147,7 @@ local oidName = function(oid)
         for i = unk, #oid, 1 do data = data .. "." .. tostring(oid[i]) end
     else
         local command = _sysctl_name .. oid
-        data, errno = command:sysctl()
+        data, errno = sysctl(command)
     end
 
     if data then
@@ -160,7 +160,7 @@ end
 
 local oidType = function(oid)
     local command = _sysctl_oidfmt .. oid
-    local data, errno = command:sysctl()
+    local data, errno = sysctl(command)
     local num, fmt = nil, nil
 
     if data and #data >= 4 then
@@ -206,7 +206,7 @@ local oidValue = function(oid, raw)
     if not num then return nil, fmt end
     local ctltype = num & types.typeMask
 
-    local data, errno = oid:sysctl()
+    local data, errno = sysctl(oid)
     if errno then
         if ctltype == types.node then
             module.errno = nil
@@ -271,7 +271,7 @@ local oidWalk = function(oid, captureFn) -- similar to sysctl_all in sysctl.c
 
     local command = _sysctl_next .. (#oid > 0 and oid or { 1 })
     while true do
-        local data, errno = command:sysctl()
+        local data, errno = sysctl(command)
         if errno then
             if errno == ERROR.ENOENT then -- exit because done
                 module.errno = nil
@@ -418,7 +418,6 @@ oidMT = {
         walk     = oidWalk,
         children = oidChildren,
         asNode   = oidAsNode,
-        sysctl   = sysctl,
     },
     __tostring = function(self)
         local rep = self[1] and tostring(self[1]) or ""
@@ -589,10 +588,11 @@ end
 
 module.decodeError = function(err)
     err = err or errno
+    if type(err) == "nil" or err == 0 then return "OK" end
     return ERROR_MSG[err] or string.format("unknown system error %d", err)
 end
 
-module.walk = function(...)
+module.walkOID = function(...)
     local oid = { ... }
 
     local fn = (#oid > 0) and (type(oid[#oid]) == "function" or

@@ -11,8 +11,8 @@
 #error Tailored to work specifically with Apple sysctl implementation
 #endif
 
-// static const char * const USERDATA_TAG = "hs.host.sysctl" ;
-static int refTable = LUA_NOREF;
+static const char * const USERDATA_TAG = "hs.host.sysctl" ;
+static LSRefTable refTable = LUA_NOREF;
 
 // Shims for FreeBSD source compatibility.
 #define CTLTYPE_UINT 0xa
@@ -241,7 +241,7 @@ static luaL_Reg moduleLib[] = {
 
 int luaopen_hs_host_sysctl_internal(lua_State* L) {
     LuaSkin *skin = [LuaSkin sharedWithState:L] ;
-    refTable = [skin registerLibrary:moduleLib metaFunctions:nil] ;
+    refTable = [skin registerLibrary:USERDATA_TAG functions:moduleLib metaFunctions:nil] ;
 
     sysctl_types(L) ;      lua_setfield(L, -2, "types") ;
     sysctl_typeSizes(L) ;  lua_setfield(L, -2, "typeSizes") ;
